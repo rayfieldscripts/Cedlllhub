@@ -1,36 +1,18 @@
--- Services
-local Players = game:GetService("Players")
-local LocalPlayer = Players.LocalPlayer
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local success, result = pcall(function()
+  local remoteCode = game:HttpGet("https://raw.githubusercontent.com/rayfieldscripts/Cedlllhub/refs/heads/main/Spawner")
+  if remoteCode then
+    local Spawner = loadstring(remoteCode)()
+    return Spawner
+  else
+    warn("Failed to retrieve Spawner script from the URL.")
+    return nil
+  end
+end)
 
--- Assuming Spawner.lua is in ReplicatedStorage
-local Spawner = require(ReplicatedStorage:WaitForChild("Spawner"))
-
--- Create Main Frame
-local MainFrame = Instance.new("Frame")
-MainFrame.Parent = LocalPlayer.PlayerGui
-MainFrame.Size = UDim2.new(0.3, 0, 0.5, 0)  --Adjusted size to accommodate title
-MainFrame.Position = UDim2.new(0.35, 0, 0.25, 0)
-MainFrame.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
-
--- Add Title
-local TitleLabel = Instance.new("TextLabel")
-TitleLabel.Parent = MainFrame
-TitleLabel.Text = "Cedlll UI"
-TitleLabel.Size = UDim2.new(1, 0, 0.1, 0)
-TitleLabel.Position = UDim2.new(0, 0, 0, 0)
-TitleLabel.BackgroundColor3 = Color3.new(0.3, 0.3, 0.3)
-TitleLabel.TextColor3 = Color3.new(1, 1, 1)
-TitleLabel.Font = Enum.Font.SourceSansBold
-TitleLabel.TextSize = 16
-
-
--- Pet Frame (rest of the code remains the same as before)
-local PetFrame = Instance.new("Frame")
-PetFrame.Parent = MainFrame
-PetFrame.Size = UDim2.new(1, 0, 0.4, 0)
-PetFrame.Position = UDim2.new(0, 0, 0.1, 0) --Adjusted position to account for title
-PetFrame.BackgroundColor3 = Color3.new(0.3, 0.3, 0.3)
-
--- ... (rest of the Pet and Seed frame code from the previous response) ...
-
+if success then
+  local Spawner = result
+  -- Continue with your UI code using the Spawner object here...
+  print("Spawner loaded successfully!")
+else
+  error("Error loading Spawner script: " .. result)
+end
