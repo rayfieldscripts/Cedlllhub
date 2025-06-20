@@ -1,31 +1,30 @@
--- Cedlllhub 🌿
--- Custom Grow a Garden script by [Your Name or Cedlllhub]
--- Version 1.0
+-- Cedlllhub Auto-Spawner Script
+-- https://github.com/rayfieldscripts/Cedlllhub
 
--- Load the Spawner module
 local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/ataturk123/GardenSpawner/refs/heads/main/Spawner.lua"))()
 
 -- Load default UI
 Spawner.Load()
 
--- Custom spawns
+-- Spawn a pet
 Spawner.SpawnPet("Raccoon", 1, 2) -- 1 KG, 2 Age
-Spawner.SpawnPet("Fox", 2, 1)     -- Add more pets if supported
 
+-- Spawn seeds
 Spawner.SpawnSeed("Candy Blossom")
-Spawner.SpawnSeed("Sunflower")
 
+-- Spawn an egg
 Spawner.SpawnEgg("Night Egg")
 
+-- Spin a flower
 Spawner.Spin("Sunflower")
 
--- Print supported pets and seeds
-print("🧸 Cedlllhub | Supported Pets:")
+-- Output available pets and seeds
+print("Cedlllhub | Supported Pets:")
 for i, pet in ipairs(Spawner.GetPets()) do
-    print("[" .. i .. "]", pet)
+    print(i, pet)
 end
 
-print("🌱 Cedlllhub | Supported Seeds:")
+print("Cedlllhub | Supported Seeds:")
 for i, seed in ipairs(Spawner.GetSeeds()) do
-    print("[" .. i .. "]", seed)
+    print(i, seed)
 end
