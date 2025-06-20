@@ -1,7 +1,7 @@
 local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/ataturk123/GardenSpawner/refs/heads/main/Spawner.lua"))()
 
 pcall(function()
-	game.CoreGui:FindFirstChild("g3zmarSpawner"):Destroy()
+	game.CoreGui:FindFirstChild("Cedlllspawner"):Destroy()
 end)
 
 local gui = Instance.new("ScreenGui", game.CoreGui)
