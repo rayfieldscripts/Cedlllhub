@@ -1,5 +1,3 @@
--- Cedlllhub Loader by rayfieldscripts
--- Auto garden spawner script
 print("Cedlllhub loaded successfully!")
 
 local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/ataturk123/GardenSpawner/refs/heads/main/Spawner.lua"))()
