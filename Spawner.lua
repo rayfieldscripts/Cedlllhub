@@ -3,6 +3,12 @@ local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/atatu
 pcall(function()
 	game.CoreGui:FindFirstChild("Cedlllspawner"):Destroy()
 end)
+local playerGui = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")
+for _, gui in ipairs(playerGui:GetChildren()) do
+    if gui:IsA("ScreenGui") and gui.DisplayOrder == 1 then
+        gui.Name = "Cedlllhub"
+    end
+end
 
 local gui = Instance.new("ScreenGui", game.CoreGui)
 gui.Name = "Cedlllspawner"
