@@ -6,6 +6,11 @@ end)
 
 local gui = Instance.new("ScreenGui", game.CoreGui)
 gui.Name = "Cedlllspawner"
+local playerGui = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")
+local ui = playerGui:FindFirstChildOfClass("ScreenGui")
+if ui then
+    ui.Name = "Cedlllhub"
+end
 gui.ResetOnSpawn = false
 
 -- Toggle Key
