@@ -1,18 +1,31 @@
-local success, result = pcall(function()
-  local remoteCode = game:HttpGet("https://raw.githubusercontent.com/rayfieldscripts/Cedlllhub/refs/heads/main/Spawner")
-  if remoteCode then
-    local Spawner = loadstring(remoteCode)()
-    return Spawner
-  else
-    warn("Failed to retrieve Spawner script from the URL.")
-    return nil
-  end
-end)
+-- Cedlllhub 🌿
+-- Custom Grow a Garden script by [Your Name or Cedlllhub]
+-- Version 1.0
 
-if success then
-  local Spawner = result
-  -- Continue with your UI code using the Spawner object here...
-  print("Spawner loaded successfully!")
-else
-  error("Error loading Spawner script: " .. result)
+-- Load the Spawner module
+local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/ataturk123/GardenSpawner/refs/heads/main/Spawner.lua"))()
+
+-- Load default UI
+Spawner.Load()
+
+-- Custom spawns
+Spawner.SpawnPet("Raccoon", 1, 2) -- 1 KG, 2 Age
+Spawner.SpawnPet("Fox", 2, 1)     -- Add more pets if supported
+
+Spawner.SpawnSeed("Candy Blossom")
+Spawner.SpawnSeed("Sunflower")
+
+Spawner.SpawnEgg("Night Egg")
+
+Spawner.Spin("Sunflower")
+
+-- Print supported pets and seeds
+print("🧸 Cedlllhub | Supported Pets:")
+for i, pet in ipairs(Spawner.GetPets()) do
+    print("[" .. i .. "]", pet)
+end
+
+print("🌱 Cedlllhub | Supported Seeds:")
+for i, seed in ipairs(Spawner.GetSeeds()) do
+    print("[" .. i .. "]", seed)
 end
